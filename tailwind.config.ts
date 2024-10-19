@@ -11,9 +11,12 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        customPink: "#FE346E", // Add your custom color here
+        primary:"#0F2533"
       },
     },
   },
   plugins: [],
 };
+
 export default config;
