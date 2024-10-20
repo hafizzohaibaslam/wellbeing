@@ -12,7 +12,12 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         customPink: "#FE346E", // Add your custom color here
-        primary:"#0F2533"
+        primary:"#0F2533",
+        secondary:"#0A1723",
+        secondary2:"#0D1F2C",
+        lightGray:"#C1C1C2",
+
+
       },
     },
   },

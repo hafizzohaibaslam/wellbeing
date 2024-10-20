@@ -19,7 +19,7 @@ const Page = () => {
     <Blogs/>
     <Testimonials/>
     <TrustedPartners/>
-    <ContactUs/>
+    <ContactUs isContact={false}/>
   
    </div>
   );
