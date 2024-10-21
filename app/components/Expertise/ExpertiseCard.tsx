@@ -13,7 +13,7 @@ const ExpertiseCard: React.FC<ExpertiseCardProps> = ({ imageSrc, title, descript
     return (
         <div className='xl:flex grid md:grid-cols-2 items-center gap-[40px] pb-[118px]'>
             <div className={` ${index%2!=0?'order-2':''} w-full xl:w-auto xl:max-h-[300px]  max-h-[500px] h-full xl:flex-shrink-0`}>
-                <Image  className='xl:max-h-[300px] md:w-auto w-full h-full object-cover' src={imageSrc} width={487} height={300} alt='Expertise Card Image' />
+                <Image  className='xl:max-h-[300px] md:w-[487px] w-full h-full object-cover' src={imageSrc} width={487} height={300} alt='Expertise Card Image' />
             </div>
 
             <div className={` ${index%2!=0?'text-right':'text-left'} xl:flex-grow `}>
