@@ -13,7 +13,7 @@ const Hero = () => {
       <div className='max-w-[93%] xl:max-w-[83%] mx-auto  grid grid-cols-1 md:grid-cols-2 gap-[30px] items-center '>
        
 
-
+    
       
 
           <div className='text-white  mt-[121px]'>
