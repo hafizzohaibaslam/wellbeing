@@ -18,7 +18,7 @@ const Header = () => {
             <div className='flex items-center gap-x-[24px]'>
                 <Image className='' src='/assets/HomeImages/search.svg' alt='search' width={24} height={24}/>
                 <Image className=' hidden sm:block' src='/assets/HomeImages/Language.svg' alt='language' width={76} height={30}/>
-                <button className='xs:block hidden px-[20px] sm:px-[32px] py-[12px] sm:py-[17px] bg-customPink rounded-[10px]'>Contact us</button>
+                <button className='sm:block hidden px-[20px] sm:px-[32px] py-[12px] sm:py-[17px] bg-customPink rounded-[10px]'>Contact us</button>
             </div>
         </div>
     </div>
