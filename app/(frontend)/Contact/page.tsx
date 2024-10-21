@@ -8,7 +8,7 @@ import React from 'react'
 const Page = () => {
   return (
     <div>
-      <ContactHero/>
+      <ContactHero heading='Our Contact' label='Contact'/>
       <GetTouch/>
       <FAQ/>
     </div>
