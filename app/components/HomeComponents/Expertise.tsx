@@ -46,6 +46,7 @@ const Expertise = () => {
 
                             
                             <ExpertiseCard
+                            IsBlog={false}
                                 key={index} // unique key for each element
                                 img={item.img}
                                 mainTitle={item.title} // assuming data contains mainTitle

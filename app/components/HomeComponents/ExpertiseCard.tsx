@@ -16,7 +16,7 @@ const ExpertiseCard: React.FC<ExpertiseCardProps> = ({ mainTitle, description,im
       <div className={`relative  max-w-[360px] ${((!IsBlog&&index==1)||(!IsBlog && index==3))?' xs:mt-28':''} ${(IsBlog && index==0) || (IsBlog && index==2 )?'xs:mt-28':'mt-0' }  overflow-y-hidden cursor-pointer border-b-[5px] hover:border-customPink border-white text-white group`}>
         <div className="absolute rounded-tr-[20px] rounded-tl-[20px] group-hover:hidden inset-0 bg-gradient-to-t from-gray-800 via-gray-700 to-gray-500 opacity-40 z-10"></div>
         <Image
-          className="rounded-tr-[20px]  rounded-tl-[20px] filter grayscale transition-all duration-1000 ease-in-out group-hover:filter-none"
+          className="rounded-tr-[20px]   rounded-tl-[20px] filter grayscale transition-all duration-1000 ease-in-out group-hover:filter-none"
           src={img}
           width={360}
           height={457}
