@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import { GiHamburgerMenu } from "react-icons/gi";
+import LanguageSwitcher from './components/HomeComponents/LanguageSwitcher';
 const Header = () => {
   return (
     <div className=''>
@@ -17,7 +18,8 @@ const Header = () => {
 
             <div className='flex items-center gap-x-[24px]'>
                 <Image className='' src='/assets/HomeImages/search.svg' alt='search' width={24} height={24}/>
-                <Image className=' hidden sm:block' src='/assets/HomeImages/Language.svg' alt='language' width={76} height={30}/>
+                {/* <Image className=' hidden sm:block' src='/assets/HomeImages/Language.svg' alt='language' width={76} height={30}/> */}
+                <LanguageSwitcher/>
                 <button className='sm:block hidden px-[20px] sm:px-[32px] py-[12px] sm:py-[17px] bg-customPink rounded-[10px]'>Contact us</button>
             </div>
         </div>

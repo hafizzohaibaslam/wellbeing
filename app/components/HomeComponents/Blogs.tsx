@@ -18,11 +18,11 @@ const Blogs = () => {
                         
                         <Image className=' w-full  h-[656px]' src="/assets/HomeImages/B1.png" alt="blog" width={548} height={656} />
                         
-                        <div className='absolute bottom-0 text-white mx-[49px] mb-[32px]'>
+                        <div className='absolute bottom-0 text-white mx-[30px] xs:mx-[49px] mb-[32px]'>
                             <p className='text-[14px] leading-[26px]'>Published on September 12, 2024 | Business Solutions</p>
                             <p className='text-[24px] leading-[34px] py-[9px]'>Discover how businesses are embracing digital transformation to stay competitive</p>
                             
-                            <div className='flex items-center gap-2'>
+                            <div className='flex items-center gap-3'>
                                 <p className='text-white'>Learn More</p>
                                 <Image src="/assets/HomeImages/ArrowRight.svg" width={20} height={20} alt='no image' />
                             </div>

@@ -15,7 +15,7 @@ export function PieChartComponent() {
 
   return (
     <Card
-      className="bg-transparent border-none relative text-white p-[52px] rounded-md"
+      className="bg-transparent border-none relative text-white p-4 sm:p-6 rounded-md max-w-full w-full"
       style={{ boxShadow: "0px 4px 35px 0px rgba(0, 0, 0, 0.35)" }}
     >
       <CardHeader>
@@ -29,8 +29,8 @@ export function PieChartComponent() {
         <CardTitle className="pb-[48px]">Average Salary</CardTitle>
       </CardHeader>
 
-      <CardContent className="flex-1 pb-0">
-        <div className="mx-auto aspect-square max-h-[250px]">
+      <CardContent className="flex-1 pb-0 flex justify-center items-center flex-col">
+        <div className="mx-auto aspect-square h-full">
           <PieChart width={200} height={200}>
             <Pie
               data={chartData}

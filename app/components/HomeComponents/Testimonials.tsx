@@ -48,7 +48,11 @@ const Testimonials = () => {
         <p className="text-customPink text-center uppercase font-normal text-[24px]">
           TESTIMONIALS
         </p>
-        <div className="flex justify-between max-w-[93%] md:max-w-[83%] mx-auto flex-shrink-0 mt-[16px]">
+        <div className="text-[24px] mt-2 flex flex-col justify-center items-center md:hidden">
+            <p className="font-normal">{currentTestimonial.name}</p>
+            <p>{currentTestimonial.position}</p>
+          </div>
+        <div className="flex  justify-between max-w-[93%] md:max-w-[83%] mx-auto flex-shrink-0 mt-[16px]">
           {/* Left caret for navigation */}
           <Image
             src="/assets/HomeImages/CaretLeft.svg"
@@ -67,7 +71,7 @@ const Testimonials = () => {
 
           <div className="flex gap-[27px] max-w-full md:max-w-[60%]">
             <Image
-              className="h-fit"
+              className="h-fit xs:w-[49px] w-[30px]"
               src="/assets/HomeImages/Quotes.svg"
               alt="Quotes"
               width={49}

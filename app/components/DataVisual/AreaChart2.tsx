@@ -1,7 +1,7 @@
 "use client";
 
 import { TrendingUp } from "lucide-react";
-import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
+import { Area, AreaChart, CartesianGrid, XAxis, ResponsiveContainer } from "recharts";
 import Image from "next/image";
 import {
   Card,
@@ -19,7 +19,7 @@ import {
 
 export const description = "A stacked area chart";
 
-// Data that fits male/female distribution (adjusting for your config)
+// Data for male/female unemployment rates
 const chartData = [
   { month: "January", male: 186, female: 80 },
   { month: "February", male: 305, female: 200 },
@@ -44,8 +44,8 @@ const chartConfig = {
 export function AreaChart2() {
   return (
     <Card
-      className="bg-transparent border-none relative text-white p-[52px] rounded-md"
-      style={{ boxShadow: "0px 4px 35px 0px rgba(0, 0, 0, 0.35)" }} // Apply the shadow for theme consistency
+      className="bg-transparent border-none relative text-white p-4 sm:p-6 rounded-md max-w-full w-full"
+      style={{ boxShadow: "0px 4px 35px 0px rgba(0, 0, 0, 0.35)" }}
     >
       <CardHeader>
         <Image
@@ -58,51 +58,52 @@ export function AreaChart2() {
         <CardTitle className="pb-[48px]">Unemployment Rate</CardTitle>
       </CardHeader>
 
-      <CardContent>
+      <CardContent className="w-full">
         <ChartContainer config={chartConfig}>
-          <AreaChart
-            accessibilityLayer
-            data={chartData}
-            margin={{
-              left: 12,
-              right: 12,
-            }}
-          >
-            <CartesianGrid vertical={false} />
-            <XAxis
-              dataKey="month"
-              tickLine={false}
-              axisLine={false}
-              tickMargin={8}
-              tickFormatter={(value) => value.slice(0, 3)}
-            />
-            <ChartTooltip
-              cursor={false}
-              content={<ChartTooltipContent indicator="dot" />}
-            />
-            {/* Area for male values */}
-            <Area
-              dataKey="male"
-              type="natural"
-              fill="var(--male)"
-              fillOpacity={0.4}
-              stroke="var(--male)"
-              stackId="a"
-            />
-            {/* Area for female values */}
-            <Area
-              dataKey="female"
-              type="natural"
-              fill="var(--female)"
-              fillOpacity={0.4}
-              stroke="var(--female)"
-              stackId="a"
-            />
-          </AreaChart>
+          {/* Ensure responsiveness using ResponsiveContainer */}
+          <div className="w-full h-full">
+            <ResponsiveContainer width="100%" height="100%">
+            <AreaChart
+  accessibilityLayer
+  data={chartData}
+  margin={{ left: 12, right: 12 }}
+>
+  <CartesianGrid vertical={false} />
+  <XAxis
+    dataKey="month"
+    tickLine={false}
+    axisLine={false}
+    tickMargin={8}
+    tickFormatter={(value) => value.slice(0, 3)}
+  />
+  <ChartTooltip
+    cursor={false}
+    content={<ChartTooltipContent indicator="dot" />}
+  />
+  <Area
+    dataKey="male"
+    type="natural"
+    fill="var(--male)"
+    fillOpacity={0.4}
+    stroke="var(--male)"
+    stackId="a"
+  />
+  <Area
+    dataKey="female"
+    type="natural"
+    fill="var(--female)"
+    fillOpacity={0.4}
+    stroke="var(--female)"
+    stackId="a"
+  />
+</AreaChart>
+
+            </ResponsiveContainer>
+          </div>
         </ChartContainer>
       </CardContent>
 
-      <CardFooter>
+      <CardFooter className="w-full">
         <div className="flex w-full items-start gap-2 text-sm">
           <div className="grid gap-2">
             <div className="flex items-center gap-2 font-medium leading-none">

@@ -32,7 +32,7 @@ const Expertise = () => {
             <div className='max-w-[93%] xl:max-w-[83%] mx-auto py-[120px] '>
                 <div className='flex flex-col justify-center items-center'>
                     <p className='text-customPink text-[24px] leading-[34px] text-center'>OUR EXPERTISE</p>
-                    <p className='text-[3.5rem] leading-[66px] font-semibold text-center text-white '>Tailored Solutions for Your Growth</p>
+                    <p className='text-[2.5rem] sm:text-[3.5rem] leading-[50px] sm:leading-[66px] font-semibold text-center text-white '>Tailored Solutions for Your Growth</p>
                     <p className='text-[18px] leading-[30px] text-center mt-[16px] text-[#EBEBEB]'>Driving Innovation and Excellence Across Every Aspect of Your Business</p>
                 </div>
                 <div className='mt-[40px]'>

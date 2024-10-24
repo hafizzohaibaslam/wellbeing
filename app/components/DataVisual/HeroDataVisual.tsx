@@ -6,7 +6,7 @@ import Image from 'next/image'
 const HeroDataVisual = () => {
   return (
     <div
-      className="bg-cover bg-center h-screen"
+      className="bg-cover bg-center h-[700px] sm:h-[639px]"
       style={{ backgroundImage: "url('/assets/Contact/contactHero.svg')" }}
     >
       <Header />
@@ -21,9 +21,9 @@ const HeroDataVisual = () => {
         </div>
 
         <div className="text-white  max-w-[840px] text-center mx-auto  ">
-          <p className='text-[56px] leading-[66px] font-normal text-white'>Access to information,<br/> reports, and statistics.</p>
-          <p className='text-[24px] leading-[38px] font-normal py-[32px] text-lightGray'>Make better decisions for your project. Base them on scientific evidence using our data, reports, and tools. Get the report that includes the data you need.</p>
-          <div className='flex items-center gap-[20px]'>
+          <p className=' text-[30px] sm:text-[40px] lg:text-[56px] leading-[50px] lg:leading-[66px] font-normal text-white'>Access to information,<br/> reports, and statistics.</p>
+          <p className=' text-[18px] lg:text-[24px] leading-[38px] font-normal py-[28px] sm:py-[32px] text-lightGray'>Make better decisions for your project. Base them on scientific evidence using our data, reports, and tools. Get the report that includes the data you need.</p>
+          <div className='flex xs:flex-row flex-col items-center gap-[20px]'>
             <input type="text" placeholder='Search' className='border-customPink w-full border-2 h-[48px] px-[16px] py-[10px] bg-transparent rounded-md' />
             <button className='bg-customPink px-[32px] py-[10px] h-[48px] rounded-md'>Search</button>
           </div>

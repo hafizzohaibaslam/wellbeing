@@ -13,14 +13,12 @@ const config: Config = {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			customPink: '#FE346E',
-  			primary: {
-  				DEFAULT: 'hsl(var(--primary))',
-  				foreground: 'hsl(var(--primary-foreground))'
-  			},
+  			primary: "#0F2533",
   			secondary: {
   				DEFAULT: 'hsl(var(--secondary))',
   				foreground: 'hsl(var(--secondary-foreground))'
   			},
+			major:"#0F2533",
   			secondary2: '#0D1F2C',
   			secondary3: '#0A1723',
   			lightGray: '#C1C1C2',

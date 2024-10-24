@@ -27,8 +27,8 @@ const data = [
 ]
 const CardsSection = () => {
   return (
-    <div className=' bg-secondary2 pb-[89px]'>
-         <div className='flex  lg:flex-nowrap flex-wrap items-center justify-center gap-[50px] lg:gap-[24px] '>
+    <div className=' bg-secondary2 '>
+         <div className=' gap-[20px] xs:grid-cols-2 grid md:flex  lg:flex-nowrap flex-wrap items- justify-center xs:gap-[0px] '>
                     {
                         data.map((item, index) => (
                           
