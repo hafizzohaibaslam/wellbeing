@@ -1,0 +1,120 @@
+{
+    "Homepage": {
+      "title": "Empowering Your Business",
+      "subHeading": "Transform your business with customized digital solutions and expert consulting based on innovation and flexibility.",
+      "getStarted": "Get Started",
+      "discoverMore": "Discover More"
+    },
+    "WhyUs": {
+      "title": "Why Us?",
+      "heading": "Unlock Your Business Potential",
+      "sections": [
+        {
+          "heading": "Empowerment",
+          "description": "Empowering individuals with innovative digital mental health solutions prioritizing empathy and human-centered design."
+        },
+        {
+          "heading": "Transformation",
+          "description": "Transformative Wellbeing care with AI and data analytics for personalized treatment plans."
+        },
+        {
+          "heading": "Innovation",
+          "description": "Innovating with a human touch to turn challenges into opportunities and inspire patient experiences through insightful, digital tools and solutions."
+        }
+      ]
+    },
+    "OurExpertise": {
+        "Maintitle": "Our Expertise",
+      "title": "Tailored Solutions for Your Growth",
+      "subtitle": "Driving Innovation and Excellence Across Every Aspect of Your Business",
+      "sections": [
+        {
+          "title": "Digital Mental Health",
+          "description": "Revolutionizing mental health services with digital platforms focused on improving access and care through technology."
+        },
+        {
+          "title": "Human Centered Design",
+          "description": "Designing solutions that put the user at the forefront, ensuring every interaction is intuitive, meaningful, and empathetic."
+        },
+        {
+          "title": "Business Agility",
+          "description": "Helping organizations adapt and thrive in a fast-changing business environment with agile methodologies."
+        },
+        {
+          "title": "Intelligent Shift",
+          "description": "Utilizing cutting-edge technologies to transform business operations and foster smart decision-making."
+        }
+      ]
+    },
+   "MarketInsights": {
+    "title": "MARKET INSIGHTS",
+    "subtitle": "Data-Driven Insights for Decision Makers",
+    "description": "Explore key market insights and trends to guide strategic decisions in digital health, business agility, and innovation. Ideal for entrepreneurs, investors, and policymakers.",
+    "buttonText": "Discover More",
+    "altText": "Graph showing market insights and trends"
+  },
+  "Testimonials": {
+    "title": "TESTIMONIALS",
+    "testimonial_1": {
+      "name": "Abdullah",
+      "position": "Head of Marketing",
+      "feedback": "From strategy to execution, their solutions have driven efficiency and innovation across our business. It’s rare to find a partner that truly understands our needs."
+    },
+    "testimonial_2": {
+      "name": "Ayesha",
+      "position": "Chief Operating Officer",
+      "feedback": "Working with them has been a game-changer for us. They bring creativity and technical expertise that have helped grow our brand presence."
+    },
+    "testimonial_3": {
+      "name": "Ali",
+      "position": "Product Manager",
+      "feedback": "Their team is extremely collaborative and results-driven. They have become a valuable part of our extended team."
+    }
+  },
+
+  "trustedPartners":
+  {
+    "title": "Trusted by 10,000+ companies around the world"
+  },
+  "contactUs": {
+    "header": "Contact us",
+    "subHeader": "Get in touch today",
+    "description": "“Have questions or need a consultation? Reach out to us and let’s explore how we can help your business thrive”",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "businessEmail": "Business Email",
+    "phoneNumber": "Phone Number",
+    "descriptionField": "Description",
+    "sendMessage": "Send Message"
+  },
+  "header": {
+    "home": "Home",
+    "whyUs": "Why Us",
+    "expertise": "Expertise",
+    "marketInsights": "Market Insights",
+    "reports": "Reports",
+    "contact": "Contact us"
+  },
+  "footer": {
+    "description": "Transform your business with tailored digital solutions and expert consultations, driven by innovation and agility.",
+    "company": "Company",
+    "whyUs": "Why Us",
+    "blogs": "Blogs",
+    "testimonials": "Testimonials",
+    "services": "Services",
+    "expertise": "Expertise",
+    "dataCenter": "Data Center",
+    "contactUs": "Contact Us",
+    "newsletter": "Join a Newsletter",
+    "subscribe": "Subscribe",
+    "wellbeing": "Wellbeing @ 2024. All rights reserved.",
+    "email": "contact@company.com",
+    "phone": "(123) 456 - 789"
+  },
+  "BlogSection": {
+    "ourBlogs": "OUR BLOGS",
+    "exploreBlogs": "Explore our blogs and reports",
+    "blogDescription": "Stay ahead with the latest trends, tips, and insights on digital solutions and mental health innovation."
+}
+  }
+  
