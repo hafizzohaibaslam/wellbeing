@@ -18,7 +18,7 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { locale: string }; // Ensure params contains locale
 }>) {
-  const messages = await getMessages(params.locale); // Fetch messages for the current locale
+  const messages = await getMessages(); 
   const currentLocale = params.locale; // Get the current locale
 
   return (
