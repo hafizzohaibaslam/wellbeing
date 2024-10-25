@@ -4,30 +4,31 @@ import React from 'react'
 import ExpertiseCard from '../HomeComponents/ExpertiseCard'
 import Header from '@/app/[locale]/Header'
 import Image from 'next/image'
-const data = [
-
-    {
-        title: "Digital Mental Health ",
-        description: "Revolutionize your mental health Services",
-        img: "/assets/HomeImages/E1.png"
-
-    }, {
-        title: "Human Centered Design",
-        description: "Revolutionize your mental health Services",
-        img: "/assets/HomeImages/E2.png"
-    },
-    {
-        title: "Business Agility",
-        description: "Revolutionize your mental health Services",
-        img: "/assets/HomeImages/E3.png"
-    },
-    {
-        title: "Intelligent Shift",
-        description: "Revolutionize your mental health Services",
-        img: "/assets/HomeImages/E4.png"
-    }
-]
+import { useTranslations } from 'next-intl'
 const Hero = () => {
+    const t = useTranslations('OurExpertise');  // Fetch the translated text for 'OurExpertise'
+
+    const data = [
+        {
+            title: t('sections.0.title'),  // Fetch the title from the translation
+            description: t('sections.0.description'),  // Fetch the description from the translation
+            img: "/assets/HomeImages/E1.png"
+        }, 
+        {
+            title: t('sections.1.title'),
+            description: t('sections.1.description'),
+            img: "/assets/HomeImages/E2.png"
+        },
+        {
+            title: t('sections.2.title'),
+            description: t('sections.2.description'),
+            img: "/assets/HomeImages/E3.png"
+        },
+        {
+            title: t('sections.3.title'),
+            description: t('sections.3.description'),
+            img: "/assets/HomeImages/E4.png"
+        }]
     return (
         <div>
             <div className='bg-primary'

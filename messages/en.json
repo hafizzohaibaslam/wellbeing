@@ -30,19 +30,19 @@
       "sections": [
         {
           "title": "Digital Mental Health",
-          "description": "Revolutionizing mental health services with digital platforms focused on improving access and care through technology."
+          "description": "Revolutionizing mental health services."
         },
         {
           "title": "Human Centered Design",
-          "description": "Designing solutions that put the user at the forefront, ensuring every interaction is intuitive, meaningful, and empathetic."
+          "description": "Designing solutions that put the user at the forefront."
         },
         {
           "title": "Business Agility",
-          "description": "Helping organizations adapt and thrive in a fast-changing business environment with agile methodologies."
+          "description": "Helping organizations adapt and thrive in business."
         },
         {
           "title": "Intelligent Shift",
-          "description": "Utilizing cutting-edge technologies to transform business operations and foster smart decision-making."
+          "description": "Utilizing cutting-edge technologies."
         }
       ]
     },
@@ -115,6 +115,92 @@
     "ourBlogs": "OUR BLOGS",
     "exploreBlogs": "Explore our blogs and reports",
     "blogDescription": "Stay ahead with the latest trends, tips, and insights on digital solutions and mental health innovation."
-}
+},
+"aboutUs": {
+    "title": "About us",
+    "subtitle": "Empowering Businesses to Thrive",
+    "description": "At Wellbeing Consulting, we believe in transforming businesses through innovative digital solutions and a human-centered approach. Founded two years ago, we are an early-stage startup dedicated to redefining the standards of business consulting by integrating digital mental health, business agility, and automation into our core services. Despite being a young company, we have rapidly gained recognition for our commitment to creating impactful change.",
+    "collaboration": "We work closely with organizations to optimize their potential by offering tailored strategies that align with their unique challenges and goals. Our focus is on driving growth and enhancing well-being, ensuring businesses are equipped to thrive in an ever-evolving market landscape. Whether it’s through innovative mental health solutions that support employee well-being, agile business practices that foster adaptability, or intelligent automation that streamlines operations, our goal is to empower businesses to achieve sustainable success.",
+    "growth": "As we continue to grow, we are passionate about expanding our impact across industries, helping organizations not only adapt but excel in a rapidly changing world.",
+    "getFreeConsultation": "Get Free Consultation",
+    "visionTitle": "OUR VISION",
+    "visionDescription": "To be the leading partner for businesses seeking innovative, sustainable, and human-centered solutions that drive long-term success and well-being.",
+    "missionTitle": "OUR MISSION",
+    "missionDescription": "To provide businesses with personalized digital strategies that foster growth, resilience, and agility, enabling them to thrive in a dynamic environment.",
+    "valuesTitle": "OUR VALUES",
+    "valuesDescription": "To driving excellence through cutting-edge innovation, maintaining the highest ethical standards, and always prioritizing the well-being of our clients and their communities."
+  },
+  "expertise": {
+    "navTitle":"Expertise",
+    "mainHeader":"Our Expertise",
+    
+    "title": "Driving Innovation and Excellence Across Every Aspect of Your Business",
+    "item1": {
+      "imageSrc": "/assets/Expertise/card.png",
+      "title": "Digital Mental Health",
+      "description": "We offer innovative digital solutions that prioritize mental well-being, helping organizations support their teams with personalized, accessible mental health services that drive both employee satisfaction and productivity.",
+      "getStarted": "Get Started"
+    },
+    "item2": {
+      "imageSrc": "/assets/Expertise/card2.png",
+      "title": "Human-Centered Design",
+      "description": "Our design strategies put people first, creating products and services that are intuitive, engaging, and impactful. We help businesses connect deeply with clients and employees by focusing on their needs and experiences.",
+      "getStarted": "Get Started"
+    },
+    "item3": {
+      "imageSrc": "/assets/Expertise/card3.png",
+      "title": "Business Agility",
+      "description": "Adapt quickly and thrive in a changing market. We empower organizations with agile frameworks that enhance flexibility, boost efficiency, and enable rapid response to new challenges and opportunities.",
+      "getStarted": "Get Started"
+    }
+    ,"getStarted": "Get Started"
+  },
+
+ "DataVisual":{ 
+  "breadcrumbs": {
+    "home": "Home",
+    "marketInsights": "Market Insights"
+  },
+  "heading": "Access to information, reports, and statistics.",
+  "description": "Make better decisions for your project. Base them on scientific evidence using our data, reports, and tools. Get the report that includes the data you need.",
+  "searchPlaceholder": "Search",
+  "searchButton": "Search",
+  "searchPlaceholder2": "Search for Keywords",
+  "filterOptions": {
+    "all": "All",
+    "products": "Products",
+    "sectors": "Sectors",
+    "regional": "Regional"
+  }
+},
+"category":
+{
+"title": "Categories",
+  "items": ["News", "Reports", "Market Updates", "Blogs", "Share of Voice"]
+},
+ "loadMore": "Load More",
+ "sortBySection":{
+    "news": "News",
+    "sortBy": "Sort By",
+    "options": {
+      "relevance": "Relevance",
+      "updated": "Updated",
+      "popularity": "Popularity"
+    }
+  },
+  "contact":{
+    "mainHeader":"Our Contact",
+    "navTitle":"Contacts",
+    "contactDetails": "Contact details",
+    "callUs": "Call us",
+    "emailUs": "Email us",
+    "phoneNumber": "(123) 456 - 789",
+    "emailAddress": "contact@company.com"
+  },
+  "faq":
+  {
+    "title": "FAQ"
+  }
+  
   }
   

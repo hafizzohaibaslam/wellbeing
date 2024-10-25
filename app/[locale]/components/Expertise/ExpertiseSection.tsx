@@ -1,33 +1,41 @@
 import React from 'react';
 import ExpertiseCard from './ExpertiseCard';
-
-const expertiseData = [
-    {
-        imageSrc: "/assets/Expertise/card.png",
-        title: "Digital Mental Health",
-        description: "We offer innovative digital solutions that prioritize mental well-being, helping organizations support their teams with personalized, accessible mental health services that drive both employee satisfaction and productivity."
-    },
-    {
-        imageSrc: "/assets/Expertise/card2.png",
-        title: "Human-Centered Design",
-        description: "Our design strategies put people first, creating products and services that are intuitive, engaging, and impactful. We help businesses connect deeply with clients and employees by focusing on their needs and experiences."
-    },
-    {
-        imageSrc: "/assets/Expertise/card3.png",
-        title: "Business Agility",
-        description: "Adapt quickly and thrive in a changing market. We empower organizations with agile frameworks that enhance flexibility, boost efficiency, and enable rapid response to new challenges and opportunities."
-    }
-];
+import { useTranslations } from 'next-intl';
 
 const ExpertiseSection = () => {
+    const t = useTranslations('expertise');
+
+    // Retrieve expertise items individually
+    const expertiseData = [
+        {
+            imageSrc: t('item1.imageSrc'),
+            title: t('item1.title'),
+            description: t('item1.description')
+        },
+        {
+            imageSrc: t('item2.imageSrc'),
+            title: t('item2.title'),
+            description: t('item2.description')
+        },
+        {
+            imageSrc: t('item3.imageSrc'),
+            title: t('item3.title'),
+            description: t('item3.description')
+        }
+    ];
+
     return (
         <div className='bg-primary pt-[286px] pl-[20px] sm:pl-[42px]'>
             <div className='bg-secondary2 px-[20px] lg:px-[40px] xl:px-[120px]'>
                 <h1 className='text-white text-center pt-[87px] pb-[80px] text-[24px] xl:text-[36px] leading-[46px] font-normal'>
-                    Driving <span className='text-customPink'>Innovation</span>  and <span className='text-customPink'>Excellence</span> Across Every Aspect of Your Business
+                    {t('title').split(' ').map((word, index) => (
+                        <span key={index} className={word === "Innovation" || word === "Excellence" ? 'text-customPink' : ''}>
+                            {word}{' '}
+                        </span>
+                    ))}
                 </h1>
                 {expertiseData.map((expertise, index) => (
-                    <ExpertiseCard 
+                    <ExpertiseCard
                         key={index}
                         imageSrc={expertise.imageSrc}
                         title={expertise.title}

@@ -7,6 +7,7 @@ import Category from './Category'
 import TopReports from './TopReports'
 import SortBySection from './SortBySection'
 import BlogCard from './BlogCard'
+import { useTranslations } from 'next-intl';
 const blogData = [
   {
     id: 1,
@@ -39,6 +40,7 @@ const blogData = [
 ];
 
 const BlogsSection = () => {
+  const t = useTranslations()
   return (
 
     <div className='bg-secondary2'>
@@ -72,7 +74,7 @@ const BlogsSection = () => {
         </div>
 
         <div className='flex justify-center items-center pb-[128px]'>
-          <button className='px-[32px] py-[17px] text-customPink border-customPink rounded-[8px] border-2'>Load More</button>
+          <button className='px-[32px] py-[17px] text-customPink border-customPink rounded-[8px] border-2'>  {t('loadMore')}</button>
         </div>
       </div>
     </div>
