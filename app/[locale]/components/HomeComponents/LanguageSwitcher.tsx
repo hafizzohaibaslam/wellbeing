@@ -4,7 +4,6 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import { usePathname } from 'next/navigation';
-import Image from 'next/image';
 
 const LanguageSwitcher = () => {
     const router = useRouter();
