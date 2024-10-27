@@ -70,3 +70,13 @@
     }
 }
   
+@font-face {
+  font-family: '29LT Adir';
+  src: url('/fonts/29LT-adir-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: '29LT Adir', sans-serif;
+}
