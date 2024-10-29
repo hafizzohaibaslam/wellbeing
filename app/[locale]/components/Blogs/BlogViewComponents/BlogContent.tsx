@@ -1,52 +1,27 @@
 import Image from 'next/image';
 import React from 'react';
 
-interface BlogSection {
-  title: string;
-  content: string;
-}
+import { Blog } from '@/misc/interfaces';
+import { SERVER_IMAGE_URL } from '@/misc/constants';
+import { dateConversion } from '@/lib/utils';
 
-interface BlogData {
-  title: string;
-  author: string;
-  date: string;
-  sections: BlogSection[];
-  mainImageSrc: string;
-  chartImageSrc: string;
-}
-
-const BlogContent: React.FC<BlogData> = ({ title, author, date, sections, mainImageSrc, chartImageSrc }) => {
+const BlogContent: React.FC<{ blog: Blog }> = ({ blog }) => {
   return (
     <div className='max-w-[650px] xl:max-w-[792px]'>
       <div>
-        <Image src={mainImageSrc} width={792} height={465} alt='main blog image' />
+        <div className='w-full h-[465px] object-cover overflow-hidden'>
+          <Image src={SERVER_IMAGE_URL + blog?.image?.url} width={792} height={465} alt='main blog image' />
+        </div>
         <div>
-          <p className='text-[48px] leading-[58px] font-normal text-white pt-[40px]'>{title}</p>
+          <p className='text-[48px] leading-[58px] font-normal text-white pt-[40px]'>{blog?.title}</p>
           <div className='flex items-center text-white border-b mb-[32px] gap-6 py-[32px]'>
-            <p>Written by {author}</p>
-            <p>{date}</p>
+            <p>Written by {blog?.author}</p>
+            <p>{dateConversion(blog?.publishedAt)}</p>
           </div>
           
-          {sections.slice(0,3).map((section, index) => (
-            <div key={index} className='mb-8'>
-              <h1 className='text-[18px] leading-[34px] font-normal text-white'>{section.title}</h1>
-              <p className='text-lightGray text-[16px] leading-[28px] font-normal'>
-                {section.content}
-              </p>
-            </div>
-          ))}
+          <div className='text-gray-300'  dangerouslySetInnerHTML={{ __html: blog?.deccription }} />
 
-          <Image className='mb-8' src={chartImageSrc} width={792} height={243} alt='chart image' />
-          {sections.slice(3,5).map((section, index) => (
-            <div key={index} className='mb-8'>
-              <h1 className='text-[18px] leading-[34px] font-normal text-white'>{section.title}</h1>
-              <p className='text-lightGray text-[16px] leading-[28px] font-normal'>
-                {section.content}
-              </p>
-            </div>
-          ))}
-
-          <div className='flex md:flex-row gap-5 items-center justify-between pr-3 flex-col'>
+          <div className='flex md:flex-row gap-5 items-center justify-between pr-3 flex-col mt-5'>
             <div className='flex items-center gap-[16px]'>
               <button className='text-white bg-customPink rounded-full px-[12px] py-[6px]'>Business</button>
               <button className='text-white bg-customPink rounded-full px-[12px] py-[6px]'>Market</button>

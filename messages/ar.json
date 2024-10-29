@@ -177,8 +177,16 @@
   "items": ["الأخبار", "التقارير", "تحديثات السوق", "المدونات", "نسبة الصوت"]
 },
  "loadMore": "تحميل المزيد",
+ "loading": "جاري التحميل",
+ "noBlogsFound": "لا يوجد مدونات",
+ "failedToLoadBlogContent": "فشل تحميل محتوى المدونة",
  "sortBySection": {
+    "all": "الكل",
     "news": "أخبار",
+    "reports": "التقارير",
+    "marketUpdates": "تحديثات السوق",
+    "blogs": "مدونات",
+    "shareOfVoice": "نسبة الصوت",
     "sortBy": "ترتيب بواسطة",
     "options": {
       "relevance": "الأهمية",

@@ -52,11 +52,11 @@ const Footer = () => {
                     <p>{t('wellbeing')}</p>
                     <div className='flex sm:flex-row flex-col sm:gap-[51px] gap-[20px]'>
                         <div className='flex items-center gap-[6px]'>
-                            <img src='/assets/HomeImages/Email.svg' alt='email' />
+                            <Image src='/assets/HomeImages/Email.svg' alt='email' width={24} height={24} />
                             <p>{t('email')}</p>
                         </div>
                         <div className='flex gap-[6px]'>
-                            <img src='/assets/HomeImages/Phone.svg' alt='phone' />
+                            <Image src='/assets/HomeImages/Phone.svg' alt='phone' width={24} height={24} />
                             <p>{t('phone')}</p>
                         </div>
                     </div>

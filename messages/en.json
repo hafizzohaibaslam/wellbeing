@@ -179,8 +179,16 @@
   "items": ["News", "Reports", "Market Updates", "Blogs", "Share of Voice"]
 },
  "loadMore": "Load More",
+ "loading": "Loading",
+ "noBlogsFound": "No blogs found",
+ "failedToLoadBlogContent": "Failed to load blog content",
  "sortBySection":{
+    "all": "All",
     "news": "News",
+    "reports": "Reports",
+    "marketUpdates": "Market Updates",
+    "blogs": "Blogs",
+    "shareOfVoice": "Share of Voice",
     "sortBy": "Sort By",
     "options": {
       "relevance": "Relevance",

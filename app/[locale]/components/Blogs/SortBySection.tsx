@@ -3,17 +3,31 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
-const SortBySection: React.FC = () => {
-  const t = useTranslations('sortBySection'); // Change the namespace as per your JSON structure
+interface Props{
+  category: string
+}
+
+const SortBySection = ({ category }:Props) => {
+  const t = useTranslations('sortBySection'); 
   const [sortOption, setSortOption] = useState<string>('Relevance');
 
   const handleSortChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSortOption(event.target.value);
   };
 
+  function toCamelCase(str: string): string {
+    return str
+      .toLowerCase()
+      .split(' ')
+      .map((word, index) => 
+        index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)
+      ) 
+      .join(''); 
+  }
+
   return (
     <div className='flex xs:flex-row flex-col gap-3 justify-between pb-[7px] border-b-customPink border-b-2 mb-[32px]'>
-      <p className='text-[40px] text-white leading-[50px] font-normal'>{t('news')}</p>
+      <p className='text-[40px] text-white leading-[50px] font-normal'>{t(`${toCamelCase(category)}`)}</p>
 
       <div className='flex items-center gap-1'>
         <Image src="/assets/Blogs/sort.svg" alt='sort' width={16} height={16} />

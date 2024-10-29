@@ -15,11 +15,11 @@ const Header = () => {
   const pathname = usePathname();
   const pathSegments = pathname.split('/').filter(Boolean);
   const links = [
-    { name: t('home'), path: `/${pathSegments[0]}/Home` },
-    { name: t('whyUs'), path: `/${pathSegments[0]}/WhyUs` },
-    { name: t('expertise'), path: `/${pathSegments[0]}/Expertise` },
-    { name: t('marketInsights'), path: `/${pathSegments[0]}/DataVisual` },
-    { name: t('reports'), path: `/${pathSegments[0]}/Blogs` },
+    { name: t('home'), path: `/${pathSegments[0]}/home` },
+    { name: t('whyUs'), path: `/${pathSegments[0]}/whyus` },
+    { name: t('expertise'), path: `/${pathSegments[0]}/expertise` },
+    { name: t('marketInsights'), path: `/${pathSegments[0]}/datavisual` },
+    { name: t('reports'), path: `/${pathSegments[0]}/blogs` },
   ];
 
   return (

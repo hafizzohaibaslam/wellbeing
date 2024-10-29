@@ -1,85 +1,148 @@
+"use client";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
+import Category from "./Category";
+import TopReports from "./TopReports";
+import SortBySection from "./SortBySection";
+import BlogCard from "./BlogCard";
+import { useTranslations } from "next-intl";
+import { Blog, BlogsResponse } from "@/misc/interfaces";
+import server from "@/misc/axios";
 
+interface BlogsSectionProps {
+  category: string | null;
+}
 
+const ITEMS_PER_PAGE = 5;
 
-import React from 'react'
+const BlogsSection = ({ category }: BlogsSectionProps) => {
+  const t = useTranslations();
+  
+  const [state, setState] = useState({
+    blogs: [] as Blog[],
+    isLoading: true,
+    currentPage: 1,
+    hasMore: true,
+    isLoadingMore: false
+  });
 
-import Category from './Category'
-import TopReports from './TopReports'
-import SortBySection from './SortBySection'
-import BlogCard from './BlogCard'
-import { useTranslations } from 'next-intl';
-const blogData = [
-  {
-    id: 1,
-    title: "Title One",
-    description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
-    date: "May 20th 2020",
-    imageSrc: "/assets/Blogs/blog1.png",
-  },
-  {
-    id: 2,
-    title: "Title Two",
-    description: "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, making it look like readable English.",
-    date: "June 15th 2020",
-    imageSrc: "/assets/Blogs/blog1.png",
-  },
-  {
-    id: 3,
-    title: "Title Three",
-    description: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.",
-    date: "July 10th 2020",
-    imageSrc: "/assets/Blogs/blog1.png",
-  },
-  {
-    id: 4,
-    title: "Title Three",
-    description: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.",
-    date: "July 10th 2020",
-    imageSrc: "/assets/Blogs/blog1.png",
-  },
-];
+  // Memoize the filter parameters
+  const filterParams = useMemo(() => ({
+    populate: ["image", "author", "tags", "categories"],
+    pagination: {
+      pageSize: ITEMS_PER_PAGE,
+    },
+    ...(category && {
+      filters: {
+        categories: {
+          title: {
+            $eq: category,
+          },
+        },
+      },
+    }),
+  }), [category]);
 
-const BlogsSection = () => {
-  const t = useTranslations()
+  // Memoize the fetch function
+  const fetchBlogs = useCallback(async (page: number, isLoadMore: boolean = false) => {
+    try {
+      const response = await server.get<BlogsResponse>("/Blogs", {
+        params: {
+          ...filterParams,
+          pagination: {
+            ...filterParams.pagination,
+            page,
+          },
+        },
+      });
+
+      setState(prev => ({
+        ...prev,
+        blogs: isLoadMore 
+          ? [...prev.blogs, ...response.data.data]
+          : response.data.data,
+        hasMore: response.data.meta.pagination.page < response.data.meta.pagination.pageCount,
+        isLoading: false,
+        isLoadingMore: false,
+      }));
+    } catch (error) {
+      console.error("Error fetching blogs:", error);
+      setState(prev => ({
+        ...prev,
+        isLoading: false,
+        isLoadingMore: false,
+      }));
+    }
+  }, [filterParams]);
+
+  // Handle initial load and category changes
+  useEffect(() => {
+    setState(prev => ({ ...prev, isLoading: true, currentPage: 1 }));
+    fetchBlogs(1);
+  }, [category, fetchBlogs]);
+
+  // Handle load more
+  const handleLoadMore = useCallback(() => {
+    if (state.isLoadingMore || !state.hasMore) return;
+    
+    const nextPage = state.currentPage + 1;
+    setState(prev => ({
+      ...prev,
+      isLoadingMore: true,
+      currentPage: nextPage,
+    }));
+    fetchBlogs(nextPage, true);
+  }, [state.isLoadingMore, state.hasMore, state.currentPage, fetchBlogs]);
+
+  if (state.isLoading) {
+    return (
+      <div className="min-h-[400px] flex items-center justify-center">
+        <div className="animate-pulse">Loading...</div>
+      </div>
+    );
+  }
+
+  if (state.blogs.length === 0) {
+    return (
+      <div className="min-h-[400px] flex items-center justify-center">
+        <p>{t('noBlogsFound')}</p>
+      </div>
+    );
+  }
+
   return (
+    <div className="bg-secondary2">
+      <div className="max-w-[93%] xl:max-w-[83%] mx-auto">
+        <div className="flex flex-col-reverse lg:flex-row justify-between gap-[20px] pt-[80px] pb-[64px]">
+          <div className="lg:max-w-[630px] px-3 xl:max-w-[792px]">
+            <SortBySection category={category ?? "All"} />
 
-    <div className='bg-secondary2'>
-      <div className='max-w-[93%] xl:max-w-[83%]  mx-auto'>
-
-        <div className='flex flex-col-reverse lg:flex-row  justify-between gap-[20px] pt-[80px] pb-[64px]'>
-
-
-          <div className='lg:max-w-[630px] px-3 xl:max-w-[792px]'>
-
-            <SortBySection/>
-
-            <div className='grid sm:grid-cols-2  gap-x-[24px] gap-y-[32px]'>
-            {blogData.map((blog) => (
-        <BlogCard 
-          key={blog.id} 
-          title={blog.title} 
-          description={blog.description} 
-          date={blog.date} 
-          imageSrc={blog.imageSrc} 
-        />
-      ))}
+            <div className="grid sm:grid-cols-2 gap-x-[24px] gap-y-[32px]">
+              {state.blogs.map((blog) => (
+                <BlogCard key={blog.id} blog={blog} />
+              ))}
             </div>
           </div>
 
-          <div className=''>
-            <Category/>
+          <aside className="lg:sticky lg:top-24">
+            <Category />
+            <TopReports />
+          </aside>
+        </div>
 
-           <TopReports/>
+        {state.hasMore && (
+          <div className="flex justify-center items-center pb-[128px]">
+            <button 
+              onClick={handleLoadMore}
+              disabled={state.isLoadingMore}
+              className="px-[32px] py-[17px] text-customPink border-customPink rounded-[8px] border-2 disabled:opacity-50 transition-opacity"
+            >
+              {state.isLoadingMore ? t("loading") : t("loadMore")}
+            </button>
           </div>
-        </div>
-
-        <div className='flex justify-center items-center pb-[128px]'>
-          <button className='px-[32px] py-[17px] text-customPink border-customPink rounded-[8px] border-2'>  {t('loadMore')}</button>
-        </div>
+        )}
       </div>
     </div>
+  );
+};
 
-  )
-}
-
-export default BlogsSection
+export default BlogsSection;
